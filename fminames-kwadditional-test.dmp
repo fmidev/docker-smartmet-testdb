@@ -1,0 +1,10 @@
+press	Lehtikohteet	\N	t
+ajax_sv_all	Ajax-sään autocomplete-nimistö. Kaikki paikat ruotsiksi.	sv	t
+synop_fi	Suomen Synop-havaintoasemat		t
+municipalities_fi	Suomen kunnat.	fi	t
+mareografit	Mareografeille lähin geoid		t
+tiesääasemat	kaikki tiesääasemat		t
+finavia	Finavian lentokentät		t
+ely_L1	ELY-alue: Lounais-Lappi		f
+stuk_extradiation_fi	STUK ulkoisen säteilyn mittausasemat		f
+RVL merivesi			f

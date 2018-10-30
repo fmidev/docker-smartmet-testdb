@@ -1,0 +1,481 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.7
+
+-- Started on 2017-12-04 14:30:30 EET
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET search_path = icemap, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 411 (class 1259 OID 2673237)
+-- Name: icemappublications; Type: TABLE; Schema: icemap; Owner: iceservice
+--
+
+CREATE TABLE icemappublications (
+    fid integer,
+    creator text,
+    creatorunit text,
+    creationdate text,
+    editor text,
+    editorunit text,
+    editdate text,
+    publicationdate timestamp with time zone,
+    chartnumber text,
+    product text,
+    validfrom timestamp with time zone,
+    validuntil timestamp with time zone,
+    editororganization text,
+    creatororganization text,
+    chartarea text,
+    testing integer,
+    comment text,
+    icechartdate timestamp with time zone,
+    valid integer,
+    invalidreason text,
+    gid integer NOT NULL
+);
+
+
+ALTER TABLE icemappublications OWNER TO iceservice;
+
+--
+-- TOC entry 450 (class 1259 OID 2673474)
+-- Name: icemappublications_gid_seq; Type: SEQUENCE; Schema: icemap; Owner: iceservice
+--
+
+CREATE SEQUENCE icemappublications_gid_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE icemappublications_gid_seq OWNER TO iceservice;
+
+--
+-- TOC entry 4879 (class 0 OID 0)
+-- Dependencies: 450
+-- Name: icemappublications_gid_seq; Type: SEQUENCE OWNED BY; Schema: icemap; Owner: iceservice
+--
+
+ALTER SEQUENCE icemappublications_gid_seq OWNED BY icemappublications.gid;
+
+
+--
+-- TOC entry 4742 (class 2604 OID 2673476)
+-- Name: gid; Type: DEFAULT; Schema: icemap; Owner: iceservice
+--
+
+ALTER TABLE ONLY icemappublications ALTER COLUMN gid SET DEFAULT nextval('icemappublications_gid_seq'::regclass);
+
+
+--
+-- TOC entry 4873 (class 0 OID 2673237)
+-- Dependencies: 411
+-- Data for Name: icemappublications; Type: TABLE DATA; Schema: icemap; Owner: iceservice
+--
+
+COPY icemappublications (fid, creator, creatorunit, creationdate, editor, editorunit, editdate, publicationdate, chartnumber, product, validfrom, validuntil, editororganization, creatororganization, chartarea, testing, comment, icechartdate, valid, invalidreason, gid) FROM stdin;
+\N	\N	\N	\N	Antti Kangas		\N	2015-11-02 14:06:34+02	1	Ice Chart	2015-11-02 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Virallinen ykköskartta	2015-11-02 00:00:00+02	\N	\N	1
+\N	\N	\N	\N	Tuomas Niskanen		\N	2015-11-05 15:11:26+02	2	Ice Chart	2015-11-05 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Tuomaksen eka kartta	2015-11-05 00:00:00+02	\N	\N	2
+\N	\N	\N	\N	Jouni Vainio		\N	2015-11-09 11:34:36+02	3	Ice Chart	2015-11-09 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2015-11-09 00:00:00+02	\N	\N	3
+\N	\N	\N	\N	Patrick Eriksson		\N	2015-11-12 14:15:05+02	4	Ice Chart	2015-11-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Patricks första officiella karta	2015-11-12 00:00:00+02	\N	\N	4
+\N	\N	\N	\N	Jouni Vainio		\N	2015-11-16 13:59:43+02	5	Ice Chart	2015-11-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2015-11-16 00:00:00+02	\N	\N	5
+\N	\N	\N	\N	Jouni Vainio		\N	2015-11-19 13:50:02+02	6	Ice Chart	2015-11-19 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2015-11-19 00:00:00+02	\N	\N	6
+\N	\N	\N	\N	Niko Tollman		\N	2015-11-23 13:23:53+02	7	Ice Chart	2015-11-23 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Patricks första officiella karta	2015-11-23 00:00:00+02	\N	\N	7
+\N	\N	\N	\N	Patrick Eriksson		\N	2015-11-26 16:01:31+02	8	Ice Chart	2015-11-26 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ensimmäisiä jäitä tällä työkalulla - JEE!	2015-11-26 00:00:00+02	\N	\N	8
+\N	\N	\N	\N	Jouni Vainio		\N	2015-11-30 12:54:58+02	9	Ice Chart	2015-11-30 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2015-11-30 00:00:00+02	\N	\N	9
+\N	\N	\N	\N	Tuomas Niskanen		\N	2015-12-03 15:09:10+02	10	Ice Chart	2015-12-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ice data included in this product	2015-12-03 00:00:00+02	\N	\N	10
+\N	\N	\N	\N	Niko Tollman		\N	2015-12-07 11:48:53+02	11	Ice Chart	2015-12-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ice data included in this product	2015-12-07 00:00:00+02	\N	\N	11
+\N	\N	\N	\N	Patrick Eriksson		\N	2015-12-10 13:35:15+02	12	Ice Chart	2015-12-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2015-12-10 00:00:00+02	\N	\N	12
+\N	\N	\N	\N	Jouni Vainio		\N	2015-12-14 14:25:28+02	13	Ice Chart	2015-12-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2015-12-14 00:00:00+02	\N	\N	13
+\N	\N	\N	\N	Tuomas Niskanen		\N	2015-12-17 15:34:39+02	14	Ice Chart	2015-12-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Satkukuvia ei ollut saatavilla, jään rajat on ravistettu hihasta	2015-12-17 00:00:00+02	\N	\N	14
+\N	\N	\N	\N	Patrick Eriksson		\N	2015-12-21 14:40:17+02	15	Ice Chart	2015-12-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Lauhaaaaa...	2015-12-21 00:00:00+02	\N	\N	15
+\N	\N	\N	\N	Jouni Vainio		\N	2015-12-28 13:57:07+02	16	Ice Chart	2015-12-28 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Pakkasta. Perämerelle ennakkotieto rajoituksista. Saimaan rajoitukset voimaan.	2015-12-28 00:00:00+02	\N	\N	16
+\N	\N	\N	\N	Jouni Vainio		\N	2015-12-29 14:24:58+02	17	Ice Chart	2015-12-29 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Pakkasta. LiVin tiedote kertoi, että KONTIO lähtee merelle.	2015-12-29 00:00:00+02	\N	\N	17
+\N	\N	\N	\N	Jouni Vainio		\N	2015-12-30 13:05:42+02	18	Ice Chart	2015-12-30 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Pakkasta. LiVin tiedote kertoi, että KONTIO lähtee merelle.	2015-12-30 00:00:00+02	\N	\N	18
+\N	\N	\N	\N	Niko Tollman		\N	2015-12-31 14:50:19+02	19	Ice Chart	2015-12-31 12:00:00+02	\N	FMI	\N	Baltic Sea	0	KONTIO is in Bay of Bothnia	2015-12-31 00:00:00+02	\N	\N	19
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-01 14:04:05+02	20	Ice Chart	2016-01-01 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ohjelma tuplaa paksuuslaatikoita.	2016-01-01 00:00:00+02	\N	\N	20
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-02 14:41:50+02	21	Ice Chart	2016-01-02 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeren jäiden muutokset arvioitu	2016-01-02 00:00:00+02	\N	\N	21
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-03 13:10:44+02	22	Ice Chart	2016-01-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-03 00:00:00+02	\N	\N	22
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-04 15:11:02+02	23	Ice Chart	2016-01-04 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-04 00:00:00+02	\N	\N	23
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-05 15:14:15+02	24	Ice Chart	2016-01-05 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-05 00:00:00+02	\N	\N	24
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-06 14:22:48+02	25	Ice Chart	2016-01-06 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-06 00:00:00+02	\N	\N	25
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-07 15:09:32+02	26	Ice Chart	2016-01-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-07 00:00:00+02	\N	\N	26
+\N	\N	\N	\N	Jouni Vainio		\N	2016-01-08 14:02:31+02	27	Ice Chart	2016-01-08 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Cosmot täysin turhia huonon kohdistuksen takia.	2016-01-08 00:00:00+02	\N	\N	27
+\N	\N	\N	\N	Jouni Vainio		\N	2016-01-10 08:41:45+02	28	Ice Chart	2016-01-09 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-09 00:00:00+02	\N	\N	28
+\N	\N	\N	\N	Jouni Vainio		\N	2016-01-10 12:15:48+02	29	Ice Chart	2016-01-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-10 00:00:00+02	\N	\N	29
+\N	\N	\N	\N	Jouni Vainio		\N	2016-01-11 15:02:01+02	30	Ice Chart	2016-01-11 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-11 00:00:00+02	\N	\N	30
+\N	\N	\N	\N	Jouni Vainio		\N	2016-01-12 14:41:19+02	31	Ice Chart	2016-01-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-12 00:00:00+02	\N	\N	31
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-13 15:19:30+02	32	Ice Chart	2016-01-13 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Kotkan havainto 20 cm jää muutettu kiintojääksi	2016-01-13 00:00:00+02	\N	\N	32
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-14 13:52:34+02	33	Ice Chart	2016-01-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-14 00:00:00+02	\N	\N	33
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-15 15:20:47+02	34	Ice Chart	2016-01-15 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-15 00:00:00+02	\N	\N	34
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-16 13:35:02+02	35	Ice Chart	2016-01-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-16 00:00:00+02	\N	\N	35
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-17 14:02:23+02	36	Ice Chart	2016-01-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Hidasta liikettä etelään, nopeaa jäänmuodostusta.	2016-01-17 00:00:00+02	\N	\N	36
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-18 15:03:32+02	37	Ice Chart	2016-01-18 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäänmuodostus jatkuu kaikilla merialueilla.	2016-01-18 00:00:00+02	\N	\N	37
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-19 12:51:18+02	38	Ice Chart	2016-01-19 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäänmuodostus jatkuu kaikilla merialueilla. FREJ aloitti Suomen hommissa.	2016-01-19 00:00:00+02	\N	\N	38
+\N	\N	\N	\N	Jouni Vainio		\N	2016-01-20 14:33:21+02	39	Ice Chart	2016-01-20 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan.	2016-01-20 00:00:00+02	\N	\N	39
+\N	\N	\N	\N	Jouni Vainio		\N	2016-01-21 14:57:43+02	40	Ice Chart	2016-01-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan. uutta jäätä muodostuu kaikilla merialueilla.	2016-01-21 00:00:00+02	\N	\N	40
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-01-22 15:28:17+02	41	Ice Chart	2016-01-22 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Kaskisen edustan multipart-polygon poistettu	2016-01-22 00:00:00+02	\N	\N	41
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-01-23 15:43:56+02	42	Ice Chart	2016-01-23 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuneet NE	2016-01-23 00:00:00+02	\N	\N	42
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-01-24 15:30:13+02	43	Ice Chart	2016-01-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-01-24 00:00:00+02	\N	\N	43
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-01-25 17:28:32+02	44	Ice Chart	2016-01-25 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Tuote myöhässä liikkuvein polygonien takia, ongelma toivottavasti nyt korjattu	2016-01-25 00:00:00+02	\N	\N	44
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-26 14:53:21+02	45	Ice Chart	2016-01-26 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat pohjoiseen kaikilla merialueilla.	2016-01-26 00:00:00+02	\N	\N	45
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-27 14:39:55+02	46	Ice Chart	2016-01-27 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat pohjoiseen kaikilla merialueilla (2).	2016-01-27 00:00:00+02	\N	\N	46
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-01-28 15:08:30+02	47	Ice Chart	2016-01-28 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Suomenlahdella on jäänreunaan muodostunut kapea sohjovyö.	2016-01-28 00:00:00+02	\N	\N	47
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-29 14:47:23+02	48	Ice Chart	2016-01-29 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Suomenlahdella jäät ovat liikkuneet kaakkoon. Samoin Perämerellä on railoja.	2016-01-29 00:00:00+02	\N	\N	48
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-30 15:10:54+02	49	Ice Chart	2016-01-30 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä puristaa heavily ridged kemi 2	2016-01-30 00:00:00+02	\N	\N	49
+\N	\N	\N	\N	Niko Tollman		\N	2016-01-31 12:54:09+02	50	Ice Chart	2016-01-31 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jään reunassa sohjovyö po	2016-01-31 00:00:00+02	\N	\N	50
+\N	\N	\N	\N	Niko Tollman		\N	2016-02-01 14:51:49+02	51	Ice Chart	2016-02-01 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jään reunassa sohjovyö po hard to force	2016-02-01 00:00:00+02	\N	\N	51
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-18 14:45:27+02	83	Ice Chart	2017-02-18 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-18 00:00:00+02	1	\N	249
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-02-02 15:04:34+02	52	Ice Chart	2016-02-02 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jään reunassa sohjovyö, myös Suomenlahdella.	2016-02-02 00:00:00+02	\N	\N	52
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-02-03 14:50:43+02	53	Ice Chart	2016-02-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkuvat etelään.	2016-02-03 00:00:00+02	\N	\N	53
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-02-04 15:23:09+02	54	Ice Chart	2016-02-04 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä ja Merenkurkussa muodostuu uutta jäätä.	2016-02-04 00:00:00+02	\N	\N	54
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-05 14:56:45+02	55	Ice Chart	2016-02-05 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä ja Merenkurkussa muodostuu uutta jäätä.	2016-02-05 00:00:00+02	\N	\N	55
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-06 12:58:43+02	56	Ice Chart	2016-02-06 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan.	2016-02-06 00:00:00+02	\N	\N	56
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-07 11:49:38+02	57	Ice Chart	2016-02-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jää liikkuu pohjoiseen.	2016-02-07 00:00:00+02	\N	\N	57
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-08 13:16:23+02	58	Ice Chart	2016-02-08 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jää liikkuu pohjoiseen.	2016-02-08 00:00:00+02	\N	\N	58
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-09 15:51:41+02	59	Ice Chart	2016-02-09 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Uusinta yritys	2016-02-09 00:00:00+02	\N	\N	59
+\N	\N	\N	\N	Niko Tollman		\N	2016-02-10 13:52:13+02	60	Ice Chart	2016-02-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätä	2016-02-10 00:00:00+02	\N	\N	60
+\N	\N	\N	\N	Niko Tollman		\N	2016-02-11 13:31:56+02	61	Ice Chart	2016-02-11 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätä	2016-02-11 00:00:00+02	\N	\N	61
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-02-12 14:44:30+02	62	Ice Chart	2016-02-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät sulavat	2016-02-12 00:00:00+02	\N	\N	62
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-02-13 13:53:02+02	63	Ice Chart	2016-02-13 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jääpeite halkeilee	2016-02-13 00:00:00+02	\N	\N	63
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-02-15 15:12:47+02	65	Ice Chart	2016-02-15 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jääpeite on liikkunut pohjoiseen, Ruotsin rannikolla shiftanneet polygonit korjattu	2016-02-15 00:00:00+02	\N	\N	64
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-16 13:42:38+02	66	Ice Chart	2016-02-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuneet itään. Perämerellä syntyy uutta jäätä.	2016-02-16 00:00:00+02	\N	\N	65
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-17 14:50:35+02	67	Ice Chart	2016-02-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä syntyy uutta jäätä.	2016-02-17 00:00:00+02	\N	\N	66
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-18 13:11:43+02	68	Ice Chart	2016-02-18 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkuneet pohjoiseen.	2016-02-18 00:00:00+02	\N	\N	67
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-02-19 14:47:31+02	69	Ice Chart	2016-02-19 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät ovat liikkeessä pohjoiseen.	2016-02-19 00:00:00+02	\N	\N	68
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-02-20 13:15:52+02	70	Ice Chart	2016-02-20 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät ovat liikkuneet pohjoiseen.	2016-02-20 00:00:00+02	\N	\N	69
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-02-21 14:13:21+02	71	Ice Chart	2016-02-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkuvat pohjoiseen ja pohjoisosassa esiintyy puristusta.	2016-02-21 00:00:00+02	\N	\N	70
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-02-22 14:35:34+02	72	Ice Chart	2016-02-22 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkuvat luoteeseen ja pohjoisosassa esiintyy paikoin heikkoa puristusta.	2016-02-22 00:00:00+02	\N	\N	71
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-23 13:32:10+02	73	Ice Chart	2016-02-23 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkuvat luoteeseen ja pohjoisosassa esiintyy paikoin heikkoa puristusta.	2016-02-23 00:00:00+02	\N	\N	72
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-24 14:56:36+02	74	Ice Chart	2016-02-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkuvat eteläkaakkoon.	2016-02-24 00:00:00+02	\N	\N	73
+\N	\N	\N	\N	Jouni Vainio		\N	2016-02-25 14:50:16+02	75	Ice Chart	2016-02-25 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkuvat etelään.	2016-02-25 00:00:00+02	\N	\N	74
+\N	\N	\N	\N	Niko Tollman		\N	2016-02-26 14:06:42+02	76	Ice Chart	2016-02-26 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Uutta jäätä Pohjanlahdella.	2016-02-26 00:00:00+02	\N	\N	75
+\N	\N	\N	\N	Niko Tollman		\N	2016-02-27 15:20:25+02	77	Ice Chart	2016-02-27 12:00:00+02	\N	FMI	\N	Baltic Sea	0	jäät paksuuntuu pohjoisessa.	2016-02-27 00:00:00+02	\N	\N	76
+\N	\N	\N	\N	Niko Tollman		\N	2016-02-28 13:10:57+02	78	Ice Chart	2016-02-28 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jää peittää Vaasasta ylöspäin.	2016-02-28 00:00:00+02	\N	\N	77
+\N	\N	\N	\N	Niko Tollman		\N	2016-02-29 14:08:23+02	79	Ice Chart	2016-02-29 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jää peittää Vaasasta ylöspäin.	2016-02-29 00:00:00+02	\N	\N	78
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-01 14:17:27+02	80	Ice Chart	2016-03-01 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jää liikkuu koilliseen. Jääkentässä paikoin puristusta.	2016-03-01 00:00:00+02	\N	\N	79
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-02 14:46:28+02	81	Ice Chart	2016-03-02 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jää liikkuu pohjoiseen. Jääkentässä paikoin puristusta.	2016-03-02 00:00:00+02	\N	\N	80
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-03-03 15:07:27+02	82	Ice Chart	2016-03-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jää liikkuu luoteeseen. Jääkentässä paikoin puristusta.	2016-03-03 00:00:00+02	\N	\N	81
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-03-04 13:18:33+02	83	Ice Chart	2016-03-04 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan	2016-03-04 00:00:00+02	\N	\N	82
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-03-05 13:29:00+02	84	Ice Chart	2016-03-05 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeren ja Suomenlahden jäät ovat liikkuneet länteen	2016-03-05 00:00:00+02	\N	\N	83
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-03-07 14:39:38+02	86	Ice Chart	2016-03-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuneet länteen	2016-03-07 00:00:00+02	\N	\N	84
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-03-08 14:13:11+02	87	Ice Chart	2016-03-08 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat pohjoiseen kaikilla merialueilla.	2016-03-08 00:00:00+02	\N	\N	85
+\N	\N	\N	\N	Niko Tollman		\N	2016-03-09 13:43:26+02	88	Ice Chart	2016-03-09 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Zeus lopettaa kautensa ja menee Turkuun.	2016-03-09 00:00:00+02	\N	\N	86
+\N	\N	\N	\N	Niko Tollman		\N	2016-03-10 13:35:57+02	89	Ice Chart	2016-03-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jää ei liiku paljoa.	2016-03-10 00:00:00+02	\N	\N	87
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-11 14:04:54+02	90	Ice Chart	2016-03-11 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan. Jäät liikkuneet Perämeren eteläosassa pohjoiseen.	2016-03-11 00:00:00+02	\N	\N	88
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-12 12:34:17+02	91	Ice Chart	2016-03-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan. Jäät liikkuneet Perämeren eteläosassa pohjoiseen.	2016-03-12 00:00:00+02	\N	\N	89
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-13 12:19:33+02	92	Ice Chart	2016-03-13 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuneet Perämeren eteläosassa pohjoiseen.	2016-03-13 00:00:00+02	\N	\N	90
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-14 13:16:14+02	93	Ice Chart	2016-03-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuneet pohjoiseen. Nyt jäät liikkeessä etelään.	2016-03-14 00:00:00+02	\N	\N	91
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-15 12:41:26+02	94	Ice Chart	2016-03-15 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Nyt jäät hitaassa liikkeessä itään.	2016-03-15 00:00:00+02	\N	\N	92
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-03-16 14:18:07+02	95	Ice Chart	2016-03-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä liikkuvat kaakkoon.	2016-03-16 00:00:00+02	\N	\N	93
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-03-17 15:06:14+02	96	Ice Chart	2016-03-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat kaakkoon.	2016-03-17 00:00:00+02	\N	\N	94
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-03-18 15:07:04+02	97	Ice Chart	2016-03-18 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat etelään.	2016-03-18 00:00:00+02	\N	\N	95
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-03-19 13:56:00+02	98	Ice Chart	2016-03-19 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat etelään ja Perämerellä muodostuu uutta jäätä.	2016-03-19 00:00:00+02	\N	\N	96
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-03-20 12:09:18+02	99	Ice Chart	2016-03-20 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä ja itäisellä Suomenlahdella muodostuu uutta jäätä.	2016-03-20 00:00:00+02	\N	\N	97
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-22 14:23:02+02	101	Ice Chart	2016-03-22 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Tilanne lähes ennallaan.	2016-03-22 00:00:00+02	\N	\N	98
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-23 14:09:54+02	102	Ice Chart	2016-03-23 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Tilanne lähes ennallaan. Jäät liikkuneet pohjoiseen.	2016-03-23 00:00:00+02	\N	\N	99
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-24 14:20:41+02	103	Ice Chart	2016-03-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkeessä pohjoiseen. Jääkentässä esiintyy puristusta.	2016-03-24 00:00:00+02	\N	\N	100
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-25 12:56:10+02	104	Ice Chart	2016-03-25 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkeessä koilliseen. Jääkentässä esiintyy puristusta.	2016-03-25 00:00:00+02	\N	\N	101
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-26 12:12:55+02	105	Ice Chart	2016-03-26 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkeessä itäkoilliseen	2016-03-26 00:00:00+02	\N	\N	102
+\N	\N	\N	\N	Niko Tollman		\N	2016-03-27 13:27:49+03	106	Ice Chart	2016-03-27 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät liikkeessä pohjoiseen	2016-03-27 00:00:00+02	\N	\N	103
+\N	\N	\N	\N	Niko Tollman		\N	2016-03-28 13:57:32+03	107	Ice Chart	2016-03-28 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät liikkeessä pohjoiseen	2016-03-28 00:00:00+03	\N	\N	104
+\N	\N	\N	\N	Niko Tollman		\N	2016-03-29 14:08:22+03	108	Ice Chart	2016-03-29 12:00:00+03	\N	FMI	\N	Baltic Sea	0	RAJOTUKSET POIS kASKINEN, lOVIISA, hAMINA, kOTKA	2016-03-29 00:00:00+03	\N	\N	105
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-30 11:08:15+03	109	Ice Chart	2016-03-30 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan.	2016-03-30 00:00:00+03	\N	\N	106
+\N	\N	\N	\N	Jouni Vainio		\N	2016-03-31 11:47:51+03	110	Ice Chart	2016-03-31 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan.	2016-03-31 00:00:00+03	\N	\N	107
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-01 14:30:01+03	111	Ice Chart	2016-04-01 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan. Jäät hitaassa liikkeessä etelään.	2016-04-01 00:00:00+03	\N	\N	108
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-02 12:42:24+03	112	Ice Chart	2016-04-02 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan. Jäät hyvin hitaassa liikkeessä etelään.	2016-04-02 00:00:00+03	\N	\N	109
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-03 12:34:48+03	113	Ice Chart	2016-04-03 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne lähes ennallaan. Jäät hyvin hitaassa liikkeessä koilliseen.	2016-04-03 00:00:00+03	\N	\N	110
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-04 15:13:04+03	114	Ice Chart	2016-04-04 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne ennallaan. Jääkenttä levossa.	2016-04-04 00:00:00+03	\N	\N	111
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-05 14:09:06+03	115	Ice Chart	2016-04-05 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä liikkuvat hitaasti pohjoiseen.	2016-04-05 00:00:00+03	\N	\N	112
+\N	\N	\N	\N	Niko Tollman		\N	2016-04-06 12:57:35+03	116	Ice Chart	2016-04-06 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jääkenttä ei ole muuttunut	2016-04-06 00:00:00+03	\N	\N	113
+\N	\N	\N	\N	Niko Tollman		\N	2016-04-07 13:14:22+03	117	Ice Chart	2016-04-07 12:00:00+03	\N	FMI	\N	Baltic Sea	0	ALE lopetti	2016-04-07 00:00:00+03	\N	\N	114
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-08 15:03:44+03	118	Ice Chart	2016-04-08 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkuvat hitaasti koiliseen, paikoin puristusta.	2016-04-08 00:00:00+03	\N	\N	115
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-09 12:10:36+03	119	Ice Chart	2016-04-09 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Saimaan kanava avattu.	2016-04-09 00:00:00+03	\N	\N	116
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-10 11:46:14+03	120	Ice Chart	2016-04-10 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne on lähes ennallaan.	2016-04-10 00:00:00+03	\N	\N	117
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-11 14:51:41+03	121	Ice Chart	2016-04-11 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne on lähes ennallaan.	2016-04-11 00:00:00+03	\N	\N	118
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-12 14:46:32+03	122	Ice Chart	2016-04-12 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne on lähes ennallaan.	2016-04-12 00:00:00+03	\N	\N	119
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-13 13:49:21+03	123	Ice Chart	2016-04-13 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämeren jääkenttä on liikkunut hiukan etelään. Puolikuu-railo avautumassa.	2016-04-13 00:00:00+03	\N	\N	120
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-14 15:08:30+03	124	Ice Chart	2016-04-14 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämeren jääkenttä on liikkunut etelään. Jääkentässä on paljon halkeamia ja pieniä railoja. Puolikuu-railo avautumassa.	2016-04-14 00:00:00+03	\N	\N	121
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-15 15:10:06+03	125	Ice Chart	2016-04-15 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämeren jääkenttä on liikkunut koilliseen. Jääkentässä on halkeamia ja pieniä railoja. Venäläisten viimeinen kauden kartta.	2016-04-15 00:00:00+03	\N	\N	122
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-16 12:29:11+03	126	Ice Chart	2016-04-16 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämeren jääkenttä on liikkunut pohjoiseen. Jääkentässä on halkeamia ja pieniä railoja. Jääalueen eteläosassa jäät alkavat tummua.	2016-04-16 00:00:00+03	\N	\N	123
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-17 11:35:07+03	127	Ice Chart	2016-04-17 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämeren jääkenttä on liikkunut pohjoiseen. Jääkentässä on halkeamia ja pieniä railoja.	2016-04-17 00:00:00+03	\N	\N	124
+\N	\N	\N	\N	Jouni Vainio		\N	2016-04-18 13:30:37+03	128	Ice Chart	2016-04-18 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämeren jääkenttä on liikkunut Etelään. Jääkentässä on halkeamia ja pieniä railoja. Jäät alkavat tummua.	2016-04-18 00:00:00+03	\N	\N	125
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-19 13:39:04+03	129	Ice Chart	2016-04-19 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämeren jääkenttä on liikkunut lounaaseen. Jääkentässä on halkeamia ja pieniä railoja. Jäät tummuvat.	2016-04-19 00:00:00+03	\N	\N	126
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-20 11:46:33+03	130	Ice Chart	2016-04-20 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä liikkuvat etelälounaaseen.	2016-04-20 00:00:00+03	\N	\N	127
+\N	\N	\N	\N	Pekko Ilvessalo		\N	2016-04-21 17:24:35+03	131	Ice Chart	2016-04-21 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä ovat liikkuneet etelään. Palautettu edelliset SST käyrät, koska hilatuotannossa ongelmia	2016-04-21 00:00:00+03	\N	\N	128
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-04-22 13:40:11+03	132	Ice Chart	2016-04-22 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne on lähes ennallaan	2016-04-22 00:00:00+03	\N	\N	129
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-04-23 14:06:19+03	133	Ice Chart	2016-04-23 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät ovat liikkuneet hieman S-SE	2016-04-23 00:00:00+03	\N	\N	130
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-04-24 12:47:39+03	134	Ice Chart	2016-04-24 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät ovat liikkuneet hieman S-SE	2016-04-24 00:00:00+03	\N	\N	131
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-25 14:14:24+03	135	Ice Chart	2016-04-25 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä liikkuvat länteen.	2016-04-25 00:00:00+03	\N	\N	132
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-26 14:02:36+03	136	Ice Chart	2016-04-26 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä liikkuvat hitaasti pohjoiseen.	2016-04-26 00:00:00+03	\N	\N	133
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-27 13:54:49+03	137	Ice Chart	2016-04-27 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä liikkuvat luoteeseen.	2016-04-27 00:00:00+03	\N	\N	134
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-28 15:09:40+03	138	Ice Chart	2016-04-28 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä liikkuvat länteen.	2016-04-28 00:00:00+03	\N	\N	135
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-29 13:50:43+03	139	Ice Chart	2016-04-29 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä ovat liikkuneet länteen.	2016-04-29 00:00:00+03	\N	\N	136
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-04-30 12:29:20+03	140	Ice Chart	2016-04-30 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne on lähes ennallaan.	2016-04-30 00:00:00+03	\N	\N	137
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-05-01 11:47:59+03	141	Ice Chart	2016-05-01 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Perämeren jäät haurastuvat ja sulavat.	2016-05-01 00:00:00+03	\N	\N	138
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-05-02 12:05:08+03	142	Ice Chart	2016-05-02 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäätilanne on lähes ennallaan	2016-05-02 00:00:00+03	\N	\N	139
+\N	\N	\N	\N	Antti Kangas		\N	2016-05-03 14:45:06+03	143	Ice Chart	2016-05-03 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Lämmintä keliä	2016-05-03 00:00:00+03	\N	\N	140
+\N	\N	\N	\N	Niko Tollman		\N	2016-05-04 13:32:19+03	144	Ice Chart	2016-05-04 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Ruotsin mössö tiivistynyt	2016-05-04 00:00:00+03	\N	\N	141
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-19 13:16:52+02	84	Ice Chart	2017-02-19 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-19 00:00:00+02	1	\N	250
+\N	\N	\N	\N	Niko Tollman		\N	2016-05-05 12:47:22+03	145	Ice Chart	2016-05-05 12:00:00+03	\N	FMI	\N	Baltic Sea	0	kiintis reikääntyy	2016-05-05 00:00:00+03	\N	\N	142
+\N	\N	\N	\N	Niko Tollman		\N	2016-05-06 13:49:41+03	146	Ice Chart	2016-05-06 12:00:00+03	\N	FMI	\N	Baltic Sea	0	KONTIO lähti stadiin	2016-05-06 00:00:00+03	\N	\N	143
+\N	\N	\N	\N	Niko Tollman		\N	2016-05-07 12:14:42+03	147	Ice Chart	2016-05-07 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Kontio on matkalla Helsinkiin	2016-05-07 00:00:00+03	\N	\N	144
+\N	\N	\N	\N	Niko Tollman		\N	2016-05-08 12:35:07+03	148	Ice Chart	2016-05-08 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Atle lopettaa kautensa tänään kello 24:00. Kontio saapunut Helsinkiin.	2016-05-08 00:00:00+03	\N	\N	145
+\N	\N	\N	\N	Jouni Vainio		\N	2016-05-09 13:40:32+03	149	Ice Chart	2016-05-09 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2016-05-09 00:00:00+03	\N	\N	146
+\N	\N	\N	\N	Jouni Vainio		\N	2016-05-10 15:01:33+03	150	Ice Chart	2016-05-10 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2016-05-10 00:00:00+03	\N	\N	147
+\N	\N	\N	\N	Jouni Vainio		\N	2016-05-11 13:42:05+03	151	Ice Chart	2016-05-11 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2016-05-11 00:00:00+03	\N	\N	148
+\N	\N	\N	\N	Jouni Vainio		\N	2016-05-12 13:31:05+03	152	Ice Chart	2016-05-12 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Kauden viimeinen jääkartta.	2016-05-12 00:00:00+03	\N	\N	149
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-07-20 11:01:47+03	85	Ice Chart	2016-03-06 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeren ja Suomenlahden jäät ovat liikkuneet länteen	2016-03-06 00:00:00+02	\N	\N	150
+\N	\N	\N	\N	Jouni Vainio		\N	2016-08-01 12:27:00+03	100	Ice Chart	2016-03-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä ja itäisellä Suomenlahdella muodostuu uutta jäätä. Lisätty puuttunut SEAICE data (PI).	2016-03-21 00:00:00+02	\N	\N	151
+\N	\N	\N	\N	Tuomas Niskanen		\N	2016-08-01 13:52:07+03	64	Ice Chart	2016-02-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jääpeite on liikkunut luoteeseen.	2016-02-14 00:00:00+02	\N	\N	152
+\N	\N	\N	\N	Jouni Vainio		\N	2016-10-27 14:45:58+03	\N	Ice Chart	2016-10-27 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Testikartta ennen kauden aloitusta	2016-10-27 00:00:00+03	1	\N	153
+\N	\N	\N	\N	Jouni Vainio		\N	2016-11-03 11:23:29+02	1	Ice Chart	2016-11-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-11-03 00:00:00+02	1	\N	154
+\N	\N	\N	\N	Jouni Vainio		\N	2016-11-07 13:22:54+02	2	Ice Chart	2016-11-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Saimaalle ollaan antamassa ensimmäiset rajoitukset.	2016-11-07 00:00:00+02	1	\N	155
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-11-10 14:48:13+02	3	Ice Chart	2016-11-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ensimmäinen jäätiedotus annettu - Saimaalla ensimmäiset rajoitukset astuvat voimaan la 12.11.	2016-11-10 00:00:00+02	1	\N	156
+\N	\N	\N	\N	Jouni Vainio		\N	2016-11-14 14:30:55+02	4	Ice Chart	2016-11-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-11-14 00:00:00+02	1	\N	157
+\N	\N	\N	\N	Niko Tollman		\N	2016-11-17 14:04:31+02	5	Ice Chart	2016-11-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-11-17 00:00:00+02	1	\N	158
+\N	\N	\N	\N	Niko Tollman		\N	2016-11-17 14:15:21+02	5	Ice Chart	2016-11-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-11-17 00:00:00+02	1	\N	159
+\N	\N	\N	\N	Niko Tollman		\N	2016-11-21 14:02:51+02	6	Ice Chart	2016-11-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-11-21 00:00:00+02	1	\N	160
+\N	\N	\N	\N	Jouni Vainio		\N	2016-11-24 14:19:38+02	7	Ice Chart	2016-11-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-11-24 00:00:00+02	1	\N	161
+\N	\N	\N	\N	Jouni Vainio		\N	2016-11-28 13:50:26+02	8	Ice Chart	2016-11-28 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-11-28 00:00:00+02	1	\N	162
+\N	\N	\N	\N	Pekko Ilvessalo		\N	2015-06-23 08:26:25+03	1	Ice Chart	2015-06-18 12:00:00+03	\N	Testing	\N	Baltic Sea	0	testa data for RTDB	2015-06-18 00:00:00+03	\N	\N	163
+\N	\N	\N	\N	Anni Montonen		\N	2015-10-06 16:28:08+03	6	Ice Chart	1988-11-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Tuotantoputki-testiksi Pekolle, syksy	1988-11-03 00:00:00+02	\N	\N	164
+\N	\N	\N	\N	Anni Montonen		\N	2015-10-07 11:03:19+03	161	Ice Chart	2014-05-10 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Tuotantoputkien testaukseen kevätkartta	2014-05-10 00:00:00+03	\N	\N	165
+\N	\N	\N	\N	Anni Montonen		\N	2015-10-07 12:55:00+03	162	Ice Chart	2014-05-11 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Tuotantoputkien testaukseen kevätkartta edellisestä muokaten	2014-05-11 00:00:00+03	\N	\N	166
+\N	\N	\N	\N	Anni Montonen		\N	2015-10-07 13:31:11+03	7	Ice Chart	1988-11-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Tuotantoputkitestiin, syksy	1988-11-07 00:00:00+02	\N	\N	167
+\N	\N	\N	\N	Anni Montonen		\N	2015-10-07 15:21:39+03	28	Ice Chart	1990-01-29 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Tuotantoputkien testaukseen jäisempi tilanne	1990-01-29 00:00:00+02	\N	\N	168
+\N	\N	\N	\N	Jouni Vainio		\N	2015-10-26 14:15:08+02	00	Ice Chart	2015-10-26 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Käyrät eivät pyöristyneet.	2015-10-26 00:00:00+02	0	\N	169
+\N	\N	\N	\N	Patrick Eriksson		\N	2015-10-29 13:59:37+02	0	Ice Chart	2015-10-29 12:00:00+02	\N	FMI	\N	Baltic Sea	0	0-kartta	2015-10-29 00:00:00+02	\N	\N	170
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-01 15:01:01+02	9	Ice Chart	2016-12-01 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat kaakkon ja etelään.	2016-12-01 00:00:00+02	1	\N	171
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-12-05 15:13:30+02	10	Ice Chart	2016-12-05 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät Perämerellä liikkuvat etelään ja uutta jäätä muodostuu	2016-12-05 00:00:00+02	1	\N	172
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-08 13:15:17+02	11	Ice Chart	2016-12-08 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Aloitetaan päivittäiset kartat ja tiedotteet.	2016-12-08 00:00:00+02	1	\N	173
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-09 13:01:16+02	12	Ice Chart	2016-12-09 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Validointi ei onnistu. Stoppaa ice polygon 97/96.	2016-12-09 00:00:00+02	1	\N	174
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-10 11:37:22+02	13	Ice Chart	2016-12-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-12-10 00:00:00+02	1	\N	175
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-11 11:49:23+02	14	Ice Chart	2016-12-11 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-12-11 00:00:00+02	1	\N	176
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-12 13:27:46+02	15	Ice Chart	2016-12-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-12-12 00:00:00+02	1	\N	177
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-13 13:33:05+02	16	Ice Chart	2016-12-13 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-12-13 00:00:00+02	1	\N	178
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-14 14:31:36+02	17	Ice Chart	2016-12-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	No IB messages available	2016-12-14 00:00:00+02	1	\N	179
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-15 14:55:27+02	18	Ice Chart	2016-12-15 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jotain hajosi	2016-12-15 00:00:00+02	1	\N	180
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-16 14:06:37+02	19	Ice Chart	2016-12-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	No problems with Vanadis. KONTIO has left the Skatta	2016-12-16 00:00:00+02	1	\N	181
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-17 14:38:12+02	20	Ice Chart	2016-12-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-12-17 00:00:00+02	1	\N	182
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-18 14:37:27+02	21	Ice Chart	2016-12-18 12:00:00+02	\N	FMI	\N	Baltic Sea	0	KONTIO started the season	2016-12-18 00:00:00+02	1	\N	183
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-19 13:37:20+02	22	Ice Chart	2016-12-19 12:00:00+02	\N	FMI	\N	Baltic Sea	0	IVAN KRUZ. added	2016-12-19 00:00:00+02	1	\N	184
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-12-20 15:15:06+02	23	Ice Chart	2016-12-20 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ice situation is virtually unchanged	2016-12-20 00:00:00+02	1	\N	185
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-12-21 14:27:13+02	24	Ice Chart	2016-12-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Pohjoisella Perämerellä on jäänreunaan muodostunut sohjovyö.	2016-12-21 00:00:00+02	1	\N	186
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-12-22 15:13:20+02	25	Ice Chart	2016-12-22 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeren jäänreunaan muodostunut sohjovyö.	2016-12-22 00:00:00+02	1	\N	187
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-23 13:21:43+02	26	Ice Chart	2016-12-23 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-12-23 00:00:00+02	1	\N	188
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-24 12:34:01+02	27	Ice Chart	2016-12-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Rauhallista Joulua !	2016-12-24 00:00:00+02	1	\N	189
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-24 13:19:50+02	27	Ice Chart	2016-12-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Rauhallista Joulua !	2016-12-24 00:00:00+02	1	\N	190
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-25 13:15:26+02	28	Ice Chart	2016-12-25 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Rauhallista Joulua !	2016-12-25 00:00:00+02	1	\N	191
+\N	\N	\N	\N	Jouni Vainio		\N	2016-12-26 12:24:29+02	29	Ice Chart	2016-12-26 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2016-12-26 00:00:00+02	1	\N	192
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-27 13:05:21+02	30	Ice Chart	2016-12-27 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Added ice observation from Tornio 34 cm.	2016-12-27 00:00:00+02	1	\N	193
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-28 13:37:07+02	31	Ice Chart	2016-12-28 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Oulu 2 bigger floe vessels needs assistance.	2016-12-28 00:00:00+02	1	\N	194
+\N	\N	\N	\N	Niko Tollman		\N	2016-12-29 14:30:09+02	32	Ice Chart	2016-12-29 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Rajoitusmuutoksia Kalajoki, Kokkola, Pietarsaari ja Vaasa I, II 2000 tonnia 3.1.2017.	2016-12-29 00:00:00+02	1	\N	195
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-12-30 13:47:56+02	33	Ice Chart	2016-12-30 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Isarna på Bottenviken driver mot nordost.	2016-12-30 00:00:00+02	1	\N	196
+\N	\N	\N	\N	Patrick Eriksson		\N	2016-12-31 11:11:58+02	34	Ice Chart	2016-12-31 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeren jäänreunaan on muodostunut vaikeakulkuinen sohjovyö.	2016-12-31 00:00:00+02	1	\N	197
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-01 12:22:12+02	35	Ice Chart	2017-01-01 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeren sohjövyö purkautuu ja jäät ajelehtivat lounaaseen.	2017-01-01 00:00:00+02	1	\N	198
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-02 13:55:53+02	36	Ice Chart	2017-01-02 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat Perämerellä länteen ja uutta jäätä muodostuu.	2017-01-02 00:00:00+02	1	\N	199
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-03 14:10:13+02	37	Ice Chart	2017-01-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat Perämerellä länteen ja uutta jäätä muodostuu.	2017-01-03 00:00:00+02	1	\N	200
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-04 14:42:19+02	38	Ice Chart	2017-01-04 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkeessä länteen/lounaaseen.	2017-01-04 00:00:00+02	1	\N	201
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-05 14:55:32+02	39	Ice Chart	2017-01-05 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jäät liikkeessä länteen/lounaaseen.	2017-01-05 00:00:00+02	1	\N	202
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-06 13:12:20+02	40	Ice Chart	2017-01-06 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-06 00:00:00+02	1	\N	203
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-07 12:56:26+02	41	Ice Chart	2017-01-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-07 00:00:00+02	1	\N	204
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-08 13:06:22+02	42	Ice Chart	2017-01-08 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-08 00:00:00+02	1	\N	205
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-09 13:32:28+02	43	Ice Chart	2017-01-09 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-09 00:00:00+02	1	\N	206
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-10 13:50:33+02	44	Ice Chart	2017-01-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-10 00:00:00+02	1	\N	207
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-11 13:52:32+02	45	Ice Chart	2017-01-11 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne on ennallaan.	2017-01-11 00:00:00+02	1	\N	208
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-12 15:07:46+02	46	Ice Chart	2017-01-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeren jäänreunassa oleva sohjovyö pysyy tiiviinä ja vaikeakulkuisena. Kemi 2:n sisäpuolella puristusta.	2017-01-12 00:00:00+02	1	\N	209
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-12 18:03:09+02	46	Ice Chart	2017-01-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeren jäänreunassa oleva sohjovyö pysyy tiiviinä ja vaikeakulkuisena. Kemi 2:n sisäpuolella puristusta. Huom! Ylim. tikku poistettu	2017-01-12 00:00:00+02	1	\N	210
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-13 13:34:09+02	47	Ice Chart	2017-01-13 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-13 00:00:00+02	1	\N	211
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-14 15:05:48+02	48	Ice Chart	2017-01-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Lisätty venäläisiä murtajia. Otettu ALE pois on Holmsundissa joku päivähomma sillä.	2017-01-14 00:00:00+02	1	\N	212
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-15 13:30:44+02	49	Ice Chart	2017-01-15 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Saimaan kanava suljetaan tänään kello 21 UTC. Polariksella tekninen vika, ei avusta tänään.	2017-01-15 00:00:00+02	1	\N	213
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-16 15:00:52+02	50	Ice Chart	2017-01-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Polaris kunnossa. 	2017-01-16 00:00:00+02	1	\N	214
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-17 13:32:07+02	51	Ice Chart	2017-01-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-17 00:00:00+02	1	\N	215
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-18 13:43:54+02	52	Ice Chart	2017-01-18 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-18 00:00:00+02	1	\N	216
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-19 13:52:36+02	53	Ice Chart	2017-01-19 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-19 00:00:00+02	1	\N	217
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-20 14:56:00+02	54	Ice Chart	2017-01-20 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-20 00:00:00+02	1	\N	218
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-21 12:39:31+02	55	Ice Chart	2017-01-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-21 00:00:00+02	1	\N	219
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-22 13:14:19+02	56	Ice Chart	2017-01-22 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne on lähes ennallaan	2017-01-22 00:00:00+02	1	\N	220
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-23 14:40:22+02	57	Ice Chart	2017-01-23 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-23 00:00:00+02	1	\N	221
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-24 12:08:23+02	58	Ice Chart	2017-01-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-24 00:00:00+02	1	\N	222
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-25 14:53:45+02	59	Ice Chart	2017-01-25 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-25 00:00:00+02	1	\N	223
+\N	\N	\N	\N	Jouni Vainio		\N	2017-01-26 13:09:41+02	60	Ice Chart	2017-01-26 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-26 00:00:00+02	1	\N	224
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-27 13:39:09+02	61	Ice Chart	2017-01-27 12:00:00+02	\N	FMI	\N	Baltic Sea	0	ALE ajanut Vaasaan.	2017-01-27 00:00:00+02	1	\N	225
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-28 11:56:49+02	62	Ice Chart	2017-01-28 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-28 00:00:00+02	1	\N	226
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-29 13:59:07+02	63	Ice Chart	2017-01-29 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-29 00:00:00+02	1	\N	227
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-29 14:19:46+02	63	Ice Chart	2017-01-29 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-29 00:00:00+02	1	\N	228
+\N	\N	\N	\N	Niko Tollman		\N	2017-01-30 14:48:02+02	64	Ice Chart	2017-01-30 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Otso valittaa sääennusteiden huonoutta. 	2017-01-30 00:00:00+02	1	\N	229
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-01-31 13:51:16+02	65	Ice Chart	2017-01-31 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-01-31 00:00:00+02	1	\N	230
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-01 14:18:29+02	66	Ice Chart	2017-02-01 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-01 00:00:00+02	1	\N	231
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-02 14:51:59+02	67	Ice Chart	2017-02-02 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-02 00:00:00+02	1	\N	232
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-03 13:40:55+02	67	Ice Chart	2017-02-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-03 00:00:00+02	1	\N	233
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-04 13:09:48+02	69	Ice Chart	2017-02-04 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Eilisen kartan numero päivittämättä.	2017-02-04 00:00:00+02	1	\N	234
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-05 12:37:23+02	70	Ice Chart	2017-02-05 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-05 00:00:00+02	1	\N	235
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-06 13:12:52+02	71	Ice Chart	2017-02-06 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-06 00:00:00+02	1	\N	236
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-07 13:10:03+02	72	Ice Chart	2017-02-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-07 00:00:00+02	1	\N	237
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-08 13:52:33+02	73	Ice Chart	2017-02-08 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-08 00:00:00+02	1	\N	238
+\N	\N	\N	\N	Niko Tollman		\N	2017-02-09 13:42:33+02	74	Ice Chart	2017-02-09 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-09 00:00:00+02	1	\N	239
+\N	\N	\N	\N	Niko Tollman		\N	2017-02-10 13:24:27+02	75	Ice Chart	2017-02-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-10 00:00:00+02	1	\N	240
+\N	\N	\N	\N	Niko Tollman		\N	2017-02-11 14:01:13+02	76	Ice Chart	2017-02-11 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-11 00:00:00+02	1	\N	241
+\N	\N	\N	\N	Niko Tollman		\N	2017-02-12 14:28:17+02	77	Ice Chart	2017-02-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-12 00:00:00+02	1	\N	242
+\N	\N	\N	\N	Niko Tollman		\N	2017-02-13 14:50:14+02	78	Ice Chart	2017-02-13 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-13 00:00:00+02	1	\N	243
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-14 15:01:13+02	79	Ice Chart	2017-02-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-14 00:00:00+02	1	\N	244
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-15 14:28:15+02	80	Ice Chart	2017-02-15 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne jotakuinkin ennallaan. VOIMA aloittaa avustuksen Loviisa-Hamina -alueella.	2017-02-15 00:00:00+02	1	\N	245
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-16 15:06:25+02	81	Ice Chart	2017-02-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-16 00:00:00+02	1	\N	246
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-16 15:49:04+02	81	Ice Chart	2017-02-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Korjattu. Edellisessä joistakin saarista tuli jääpolygoneja.	2017-02-16 00:00:00+02	1	\N	247
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-17 15:25:56+02	82	Ice Chart	2017-02-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-17 00:00:00+02	1	\N	248
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-20 13:49:26+02	85	Ice Chart	2017-02-20 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-20 00:00:00+02	1	\N	251
+\N	\N	\N	\N	Niko Tollman		\N	2017-02-21 13:52:18+02	86	Ice Chart	2017-02-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-21 00:00:00+02	1	\N	252
+\N	\N	\N	\N	Niko Tollman		\N	2017-02-22 14:14:58+02	87	Ice Chart	2017-02-22 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuvat pohjoiseen.	2017-02-22 00:00:00+02	1	\N	253
+\N	\N	\N	\N	Niko Tollman		\N	2017-02-23 14:17:52+02	88	Ice Chart	2017-02-23 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät liikkuu paljon	2017-02-23 00:00:00+02	1	\N	254
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-24 13:40:36+02	89	Ice Chart	2017-02-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämerellä jää liikkeessä SSW.	2017-02-24 00:00:00+02	1	\N	255
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-25 13:49:38+02	90	Ice Chart	2017-02-25 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Puolikuu auennut Perämerelle. Uutta jäätä syntyy.	2017-02-25 00:00:00+02	1	\N	256
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-26 13:40:42+02	91	Ice Chart	2017-02-26 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-02-26 00:00:00+02	1	\N	257
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-02-27 14:36:21+02	92	Ice Chart	2017-02-27 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Perämeri kauttaaltaan jässä.	2017-02-27 00:00:00+02	1	\N	258
+\N	\N	\N	\N	Jouni Vainio		\N	2017-02-28 13:06:11+02	93	Ice Chart	2017-02-28 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäät paksuuntuvat Perämerellä.	2017-02-28 00:00:00+02	1	\N	259
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-01 14:06:27+02	94	Ice Chart	2017-03-01 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ei juurikaan muutoksia. 	2017-03-01 00:00:00+02	1	\N	260
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-02 14:45:42+02	95	Ice Chart	2017-03-02 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Jäätilanne jotakuinkin ennallaan.	2017-03-02 00:00:00+02	1	\N	261
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-03 14:17:24+02	96	Ice Chart	2017-03-03 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-03 00:00:00+02	1	\N	262
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-04 13:54:19+02	97	Ice Chart	2017-03-04 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-04 00:00:00+02	1	\N	263
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-05 15:08:22+02	98	Ice Chart	2017-03-05 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-05 00:00:00+02	1	\N	264
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-06 14:06:54+02	99	Ice Chart	2017-03-06 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-06 00:00:00+02	1	\N	265
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-07 14:40:43+02	100	Ice Chart	2017-03-07 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-07 00:00:00+02	1	\N	266
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-08 13:36:17+02	101	Ice Chart	2017-03-08 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-08 00:00:00+02	1	\N	267
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-09 13:49:34+02	102	Ice Chart	2017-03-09 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-09 00:00:00+02	1	\N	268
+\N	\N	\N	\N	Niko Tollman		\N	2017-03-10 15:03:25+02	103	Ice Chart	2017-03-10 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-10 00:00:00+02	1	\N	269
+\N	\N	\N	\N	Niko Tollman		\N	2017-03-11 13:27:09+02	104	Ice Chart	2017-03-11 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-11 00:00:00+02	1	\N	270
+\N	\N	\N	\N	Niko Tollman		\N	2017-03-12 13:31:48+02	105	Ice Chart	2017-03-12 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-12 00:00:00+02	1	\N	271
+\N	\N	\N	\N	Niko Tollman		\N	2017-03-13 13:21:12+02	106	Ice Chart	2017-03-13 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-13 00:00:00+02	1	\N	272
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-14 15:03:00+02	107	Ice Chart	2017-03-14 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-14 00:00:00+02	1	\N	273
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-15 14:21:57+02	108	Ice Chart	2017-03-15 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-15 00:00:00+02	1	\N	274
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-16 15:16:19+02	109	Ice Chart	2017-03-16 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-16 00:00:00+02	1	\N	275
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-17 13:52:49+02	110	Ice Chart	2017-03-17 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-17 00:00:00+02	1	\N	276
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-18 13:07:09+02	111	Ice Chart	2017-03-18 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-18 00:00:00+02	1	\N	277
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-19 13:08:41+02	112	Ice Chart	2017-03-19 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Thesis lopettaa kauden ja palaa Turkuun.	2017-03-19 00:00:00+02	1	\N	278
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-20 15:08:35+02	113	Ice Chart	2017-03-20 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ruotslaisrajoitusten kanssa sekoilua.	2017-03-20 00:00:00+02	1	\N	279
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-21 13:27:39+02	114	Ice Chart	2017-03-21 12:00:00+02	\N	FMI	\N	Baltic Sea	0	Ruotslaisrajoitusten kanssa sekoilua.	2017-03-21 00:00:00+02	1	\N	280
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-22 13:52:16+02	115	Ice Chart	2017-03-22 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-22 00:00:00+02	1	\N	281
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-23 14:44:15+02	116	Ice Chart	2017-03-23 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-23 00:00:00+02	1	\N	282
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-24 14:24:20+02	117	Ice Chart	2017-03-24 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-24 00:00:00+02	1	\N	283
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-25 11:49:20+02	118	Ice Chart	2017-03-25 12:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-03-25 00:00:00+02	1	\N	284
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-26 13:04:36+03	119	Ice Chart	2017-03-26 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-03-26 00:00:00+02	1	\N	285
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-27 15:19:48+03	120	Ice Chart	2017-03-27 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-03-27 00:00:00+03	1	\N	286
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-03-28 14:46:08+03	121	Ice Chart	2017-03-28 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-03-28 00:00:00+03	1	\N	287
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-29 14:36:35+03	122	Ice Chart	2017-03-29 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Voima lopettanut eilen ja palannut aamulla Helsinkiin.	2017-03-29 00:00:00+03	1	\N	288
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-30 13:59:47+03	123	Ice Chart	2017-03-30 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-03-30 00:00:00+03	1	\N	289
+\N	\N	\N	\N	Jouni Vainio		\N	2017-03-31 15:10:11+03	124	Ice Chart	2017-03-31 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-03-31 00:00:00+03	1	\N	290
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-01 12:16:16+03	125	Ice Chart	2017-04-01 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Kaikki jäät sulaneet! Kotkassa Viiruja ja Pesosia vaan!	2017-04-01 00:00:00+03	1	\N	291
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-02 13:20:47+03	126	Ice Chart	2017-04-02 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Kaikki jäät sulaneet! Kotkassa Viiruja ja Pesosia vaan! APRILLIA !!!	2017-04-02 00:00:00+03	1	\N	292
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-03 14:09:28+03	127	Ice Chart	2017-04-03 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-03 00:00:00+03	1	\N	293
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-04 14:22:46+03	128	Ice Chart	2017-04-04 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-04 00:00:00+03	1	\N	294
+\N	\N	\N	\N	Niko Tollman		\N	2017-04-05 12:30:07+03	129	Ice Chart	2017-04-05 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-05 00:00:00+03	1	\N	295
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-04-06 14:39:10+03	130	Ice Chart	2017-04-06 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-06 00:00:00+03	1	\N	296
+\N	\N	\N	\N	Niko Tollman		\N	2017-04-07 14:50:29+03	131	Ice Chart	2017-04-07 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-07 00:00:00+03	1	\N	297
+\N	\N	\N	\N	Niko Tollman		\N	2017-04-08 11:23:37+03	132	Ice Chart	2017-04-08 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-08 00:00:00+03	1	\N	298
+\N	\N	\N	\N	Niko Tollman		\N	2017-04-09 11:57:37+03	133	Ice Chart	2017-04-09 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-09 00:00:00+03	1	\N	299
+\N	\N	\N	\N	Niko Tollman		\N	2017-04-10 13:59:13+03	134	Ice Chart	2017-04-10 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Jäät haurastuu. Kalajoella pyöräilijä sulaan.	2017-04-10 00:00:00+03	1	\N	300
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-04-11 14:30:20+03	135	Ice Chart	2017-04-11 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-11 00:00:00+03	1	\N	301
+\N	\N	\N	\N	Anni Montonen		\N	2017-04-12 15:12:08+03	136	Ice Chart	2017-04-12 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-12 00:00:00+03	1	\N	302
+\N	\N	\N	\N	Anni Montonen		\N	2017-04-13 15:03:52+03	137	Ice Chart	2017-04-13 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-13 00:00:00+03	1	\N	303
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-14 13:31:11+03	138	Ice Chart	2017-04-14 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-14 00:00:00+03	1	\N	304
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-15 12:34:19+03	139	Ice Chart	2017-04-15 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-15 00:00:00+03	1	\N	305
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-04-16 13:20:59+03	140	Ice Chart	2017-04-16 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-16 00:00:00+03	1	\N	306
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-04-17 13:40:19+03	141	Ice Chart	2017-04-17 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-17 00:00:00+03	1	\N	307
+\N	\N	\N	\N	Anni Montonen		\N	2017-04-18 15:10:22+03	142	Ice Chart	2017-04-18 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-18 00:00:00+03	1	\N	308
+\N	\N	\N	\N	Anni Montonen		\N	2017-04-19 15:02:10+03	143	Ice Chart	2017-04-19 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-19 00:00:00+03	1	\N	309
+\N	\N	\N	\N	Anni Montonen		\N	2017-04-20 14:52:31+03	144	Ice Chart	2017-04-20 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-20 00:00:00+03	1	\N	310
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-04-21 14:49:53+03	145	Ice Chart	2017-04-21 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-21 00:00:00+03	1	\N	311
+\N	\N	\N	\N	Anni Montonen		\N	2017-04-22 14:29:21+03	146	Ice Chart	2017-04-22 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-22 00:00:00+03	1	\N	312
+\N	\N	\N	\N	Anni Montonen		\N	2017-04-23 14:10:17+03	147	Ice Chart	2017-04-23 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-23 00:00:00+03	1	\N	313
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-04-24 14:21:17+03	148	Ice Chart	2017-04-24 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-24 00:00:00+03	1	\N	314
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-04-25 14:03:32+03	149	Ice Chart	2017-04-25 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-25 00:00:00+03	1	\N	315
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-26 14:33:37+03	150	Ice Chart	2017-04-26 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-26 00:00:00+03	1	\N	316
+\N	\N	\N	\N	Anni Montonen		\N	2017-04-27 14:31:59+03	151	Ice Chart	2017-04-27 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-27 00:00:00+03	1	\N	317
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-28 14:33:39+03	152	Ice Chart	2017-04-28 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-04-28 00:00:00+03	1	\N	318
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-29 12:45:09+03	153	Ice Chart	2017-04-29 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Liikenne Saimaan Kanavalla alkoi.	2017-04-29 00:00:00+03	1	\N	319
+\N	\N	\N	\N	Jouni Vainio		\N	2017-04-30 12:30:51+03	154	Ice Chart	2017-04-30 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Kontio lopettaa kautensa.	2017-04-30 00:00:00+03	1	\N	320
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-01 11:36:44+03	155	Ice Chart	2017-05-01 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-01 00:00:00+03	1	\N	321
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-02 14:16:40+03	156	Ice Chart	2017-05-02 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-02 00:00:00+03	1	\N	322
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-03 14:15:34+03	157	Ice Chart	2017-05-03 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-03 00:00:00+03	1	\N	323
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-04 14:55:50+03	158	Ice Chart	2017-05-04 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-04 00:00:00+03	1	\N	324
+\N	\N	\N	\N	Niko Tollman		\N	2017-05-05 13:16:43+03	159	Ice Chart	2017-05-05 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-05 00:00:00+03	1	\N	325
+\N	\N	\N	\N	Niko Tollman		\N	2017-05-06 12:19:08+03	160	Ice Chart	2017-05-06 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-06 00:00:00+03	1	\N	326
+\N	\N	\N	\N	Niko Tollman		\N	2017-05-07 13:31:35+03	161	Ice Chart	2017-05-07 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-07 00:00:00+03	1	\N	327
+\N	\N	\N	\N	Niko Tollman		\N	2017-05-08 13:51:02+03	162	Ice Chart	2017-05-08 12:00:00+03	\N	FMI	\N	Baltic Sea	0	FREJ lopettaa jäänmurtokautensa	2017-05-08 00:00:00+03	1	\N	328
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-09 13:34:33+03	163	Ice Chart	2017-05-09 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-09 00:00:00+03	1	\N	329
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-10 13:47:45+03	164	Ice Chart	2017-05-10 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-10 00:00:00+03	1	\N	330
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-11 14:19:27+03	165	Ice Chart	2017-05-11 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-11 00:00:00+03	1	\N	331
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-12 15:00:47+03	166	Ice Chart	2017-05-12 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-12 00:00:00+03	1	\N	332
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-13 13:17:11+03	167	Ice Chart	2017-05-13 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-13 00:00:00+03	1	\N	333
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-14 12:55:26+03	168	Ice Chart	2017-05-14 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-14 00:00:00+03	1	\N	334
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-15 13:45:29+03	169	Ice Chart	2017-05-15 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-15 00:00:00+03	1	\N	335
+\N	\N	\N	\N	Anni Montonen		\N	2017-05-16 13:38:43+03	170	Ice Chart	2017-05-16 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-16 00:00:00+03	1	\N	336
+\N	\N	\N	\N	Anni Montonen		\N	2017-05-17 14:34:50+03	171	Ice Chart	2017-05-17 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-17 00:00:00+03	1	\N	337
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-18 15:06:37+03	172	Ice Chart	2017-05-18 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-18 00:00:00+03	1	\N	338
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-19 14:02:04+03	173	Ice Chart	2017-05-19 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-19 00:00:00+03	1	\N	339
+\N	\N	\N	\N	Niko Tollman		\N	2017-05-20 15:01:04+03	174	Ice Chart	2017-05-20 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-20 00:00:00+03	1	\N	340
+\N	\N	\N	\N	Niko Tollman		\N	2017-05-21 14:18:48+03	175	Ice Chart	2017-05-21 12:00:00+03	\N	FMI	\N	Baltic Sea	0	YMER lopetti yöllä	2017-05-21 00:00:00+03	1	\N	341
+\N	\N	\N	\N	Niko Tollman		\N	2017-05-22 14:52:29+03	176	Ice Chart	2017-05-22 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-22 00:00:00+03	1	\N	342
+\N	\N	\N	\N	Anni Montonen		\N	2017-05-23 14:28:51+03	177	Ice Chart	2017-05-23 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-23 00:00:00+03	1	\N	343
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-24 13:41:27+03	178	Ice Chart	2017-05-24 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-24 00:00:00+03	1	\N	344
+\N	\N	\N	\N	Anni Montonen		\N	2017-05-25 13:59:27+03	179	Ice Chart	2017-05-25 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-25 00:00:00+03	1	\N	345
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-26 13:55:57+03	180	Ice Chart	2017-05-26 12:00:00+03	\N	FMI	\N	Baltic Sea	0	OTSO poistuu alueelta.	2017-05-26 00:00:00+03	1	\N	346
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-29 15:23:03+03	181	Ice Chart	2017-05-29 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-29 00:00:00+03	1	\N	347
+\N	\N	\N	\N	Jouni Vainio		\N	2017-05-30 13:54:29+03	182	Ice Chart	2017-05-30 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-30 00:00:00+03	1	\N	348
+\N	\N	\N	\N	Patrick Eriksson		\N	2017-05-31 14:56:30+03	183	Ice Chart	2017-05-31 12:00:00+03	\N	FMI	\N	Baltic Sea	0	\N	2017-05-31 00:00:00+03	1	\N	349
+\N	\N	\N	\N	Jouni Vainio		\N	2017-06-01 14:35:54+03	184	Ice Chart	2017-06-01 12:00:00+03	\N	FMI	\N	Baltic Sea	0	Kauden viimeinen kartta	2017-06-01 00:00:00+03	1	\N	350
+\N	\N	\N	\N	Niko Tollman	\N	\N	2017-11-02 13:30:37+02	1	Ice Chart	2017-11-02 14:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-11-02 00:00:00+02	1	\N	387
+\N	\N	\N	\N	Niko Tollman	\N	\N	2017-11-06 14:02:39+02	2	Ice Chart	2017-11-06 14:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-11-06 00:00:00+02	1	\N	388
+\N	\N	\N	\N	Lisa Lind	\N	\N	2017-11-09 13:23:24+02	3	Ice Chart	2017-11-09 14:00:00+02	\N	SMHI	\N	Baltic Sea	0	\N	2017-11-09 00:00:00+02	1	\N	389
+\N	\N	\N	\N	Isabella Grönfeldt	\N	\N	2017-11-13 12:56:18+02	4	Ice Chart	2017-11-13 14:00:00+02	\N	SMHI	\N	Baltic Sea	0	\N	2017-11-13 00:00:00+02	1	\N	390
+\N	\N	\N	\N	Jouni Vainio	\N	\N	2017-11-16 13:10:53+02	5	Ice Chart	2017-11-16 14:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-11-16 00:00:00+02	1	\N	391
+\N	\N	\N	\N	Jouni Vainio	\N	\N	2017-11-20 13:58:48+02	6	Ice Chart	2017-11-20 14:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-11-20 00:00:00+02	1	\N	392
+\N	\N	\N	\N	Isabella Grönfeldt	\N	\N	2017-11-23 14:05:54+02	7	Ice Chart	2017-11-23 14:00:00+02	\N	SMHI	\N	Baltic Sea	0	\N	2017-11-23 00:00:00+02	1	\N	394
+\N	\N	\N	\N	Anders Söderberg	\N	\N	2017-11-27 14:00:23+02	8	Ice Chart	2017-11-27 14:00:00+02	\N	SMHI	\N	Baltic Sea	0	\N	2017-11-27 00:00:00+02	1	\N	395
+\N	\N	\N	\N	Niko Tollman	\N	\N	2017-11-30 13:14:07+02	9	Ice Chart	2017-11-30 14:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-11-30 00:00:00+02	1	\N	396
+\N	\N	\N	\N	Niko Tollman	\N	\N	2017-12-04 13:35:11+02	10	Ice Chart	2017-12-04 14:00:00+02	\N	FMI	\N	Baltic Sea	0	\N	2017-12-04 00:00:00+02	1	\N	397
+\.
+
+
+--
+-- TOC entry 4880 (class 0 OID 0)
+-- Dependencies: 450
+-- Name: icemappublications_gid_seq; Type: SEQUENCE SET; Schema: icemap; Owner: iceservice
+--
+
+SELECT pg_catalog.setval('icemappublications_gid_seq', 397, true);
+
+
+--
+-- TOC entry 4744 (class 2606 OID 2673478)
+-- Name: icemappublications_pkey; Type: CONSTRAINT; Schema: icemap; Owner: iceservice
+--
+
+ALTER TABLE ONLY icemappublications
+    ADD CONSTRAINT icemappublications_pkey PRIMARY KEY (gid);
+
+
+-- Completed on 2017-12-04 14:30:30 EET
+
+--
+-- PostgreSQL database dump complete
+--
+

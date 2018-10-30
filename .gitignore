@@ -1,0 +1,7 @@
+# Editor artifacts
+*~
+
+# Eclipse files
+.cproject
+.project
+.settings/
