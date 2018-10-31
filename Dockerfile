@@ -4,8 +4,9 @@
 #
 # https://hub.docker.com/_/centos/
 
-FROM centos:7
+FROM smartmet-cibase:latest
 MAINTAINER "fmi"
+USER root
 
 # Ability to override PGDATA from command line or docker-compose.yml
 ENV PGDATA=/var/lib/pgsql/data/9.5
@@ -20,10 +21,8 @@ RUN groupadd -r postgres && useradd -r -g postgres postgres && \
    # Install newest PostgreSQL major version repo.
    # http://yum.postgresql.org/repopackages.php
    # Note: EPEL is required by postgis and also supplies pv.
-
    echo "ip_resolve=IPv4" >> /etc/yum.conf && \
-   curl -4 "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" -o /tmp/epel-release-latest-7.noarch.rpm && \
-   yum --nogpgcheck -y install /tmp/epel-release-latest-7.noarch.rpm && \
+   ( test -r /etc/yum.repos.d/epel.repo || yum -y install "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm" ) && \
 
    yum -y update  && \
    yum -y localinstall https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm && \
