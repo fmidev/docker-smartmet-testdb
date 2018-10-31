@@ -4,7 +4,7 @@
 #
 # https://hub.docker.com/_/centos/
 
-FROM smartmet-cibase:latest
+FROM fmidev/smartmet-cibase:latest
 MAINTAINER "fmi"
 USER root
 
