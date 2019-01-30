@@ -5,6 +5,8 @@
 # https://hub.docker.com/_/centos/
 
 FROM fmidev/smartmet-cibase:latest
+ENV http_proxy=http://wwwcache.fmi.fi:8080 https_proxy=http://wwwcache.fmi.fi:8080 no_proxy=weatherproof.fi
+
 MAINTAINER "fmi"
 USER root
 
@@ -12,6 +14,7 @@ USER root
 ENV PGDATA=/var/lib/pgsql/data/9.5
 
 # Explicitly set user/group IDs
+# Note that we reinstall glibc-common to get all locales
 RUN groupadd -r postgres && useradd -r -g postgres postgres && \
    # Inject excludes into YUM config files.
    # https://wiki.postgresql.org/wiki/YUM_Installation
@@ -26,6 +29,7 @@ RUN groupadd -r postgres && useradd -r -g postgres postgres && \
 
    yum -y update  && \
    yum -y localinstall https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm && \
+   yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common && \
    yum -y install postgresql95 postgresql95-server postgresql95-contrib postgresql95-libs postgis2_95 pv && \
    yum clean all && rm -rf /tmp/* && \
    yum -y install lsof
