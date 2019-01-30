@@ -36,7 +36,6 @@ RUN groupadd -r postgres && useradd -r -g postgres postgres && \
 
 # The database dumps
 COPY db-dump.bz2 /tmp/
-COPY varoalueet.sql.bz2 /tmp/
 
 RUN mkdir -p ${PGDATA} && \
     mkdir -p /etc/provision /var/run/postgresql && \
@@ -57,8 +56,8 @@ COPY etc/pg_hba.conf ${PGDATA}
 # layer, where the server is required to be running again.
 RUN cd /tmp && \
     /usr/pgsql-9.5/bin/pg_ctl -w -s -D ${PGDATA} -o "-p 5432" start && \
-    bzcat db-dump.bz2 | sed -e 's/^CREATE ROLE postgres;//' > db.sql && /usr/pgsql-9.5/bin/psql -f db.sql --set ON_ERROR_STOP=on && \
-    echo "CREATE EXTENSION IF NOT EXISTS postgis SCHEMA public" && bzcat varoalueet.sql.bz2 | sed -e 's/^CREATE ROLE postgres;//' | grep -v idle_in_transaction_session_timeout > db.sql && /usr/pgsql-9.5/bin/psql -f db.sql --set ON_ERROR_STOP=on && \
+    bzcat db-dump.bz2 | sed -e 's/^CREATE ROLE postgres;//' > db.sql && \
+    /usr/pgsql-9.5/bin/psql -f db.sql --set ON_ERROR_STOP=on && \
     /usr/pgsql-9.5/bin/pg_ctl -w -s -D ${PGDATA} -o "-p 5432" stop && \
     chmod 0700 ${PGDATA} && \
     rm -rf /tmp/*
