@@ -1,6 +1,6 @@
 NAME = smartmet-server-test-db
 TAG = docker.weatherproof.fi/$(NAME)
-VERSION = 9.5-centos7
+VERSION = 12-centos7
 
 ifneq ($(HTTP_PROXY),)
 	BUILD-ARG-HTTP_PROXY=--build-arg=http_proxy=$(HTTP_PROXY)
