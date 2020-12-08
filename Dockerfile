@@ -30,7 +30,7 @@ RUN groupadd -r postgres && useradd -r -g postgres postgres && \
    yum -y update  && \
    yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common && \
    yum-config-manager --enable pgdg12 pgdg-common --save && \
-   yum -y install postgresql12 postgresql12-server postgresql12-contrib postgresql12-libs postgis2_12 pv && \
+   yum -y install postgresql12 postgresql12-server postgresql12-contrib postgresql12-libs postgis30_12 pv && \
    yum clean all && rm -rf /tmp/* && \
    yum -y install lsof bzip2
 
